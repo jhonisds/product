@@ -18,6 +18,7 @@ defmodule ProductWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    live "/devices", DeviceLive.Index, :index
   end
 
   # Other scopes may use custom stacks.
