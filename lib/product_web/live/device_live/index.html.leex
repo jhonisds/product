@@ -1,1 +1,7 @@
-<p> Index page </p>
+<ul id="devices" phx-update="prepend">
+    <%= for devices <- @devices  do %>
+
+    <%= live_component @socket, ProductWeb.DeviceLive.DeviceComponent, id: devices.id, device: devices %>
+
+    <% end %>
+</ul>

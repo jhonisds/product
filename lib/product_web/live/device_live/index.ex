@@ -6,6 +6,15 @@ defmodule ProductWeb.DeviceLive.Index do
   end
 
   def todos() do
-    []
+    Product.Devices.list_devices()
+  end
+
+  defp apply_actions(socket, :index, _) do
+    IO.inspect("index")
+    IO.inspect(socket)
+
+    socket
+    |> assign(:page_title, "list device")
+    |> assign(:devices, nil)
   end
 end
