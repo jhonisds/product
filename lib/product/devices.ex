@@ -53,6 +53,13 @@ defmodule Product.Devices do
     %Device{}
     |> Device.changeset(attrs)
     |> Repo.insert()
+    |> broadcast(:device_created)
+  end
+
+  defp broadcast({:error, _reason} = error, _event), do: error
+
+  defp broadcast({:ok, device}, event) do
+    Phoenix.PubSub.broadcast(Product.PubSub, "devices", {event, device})
   end
 
   @doc """
