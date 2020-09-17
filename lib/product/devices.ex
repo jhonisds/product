@@ -56,10 +56,15 @@ defmodule Product.Devices do
     |> broadcast(:device_created)
   end
 
+  def subscribe() do
+    Phoenix.PubSub.subscribe(Product.PubSub, "devices")
+  end
+
   defp broadcast({:error, _reason} = error, _event), do: error
 
   defp broadcast({:ok, device}, event) do
     Phoenix.PubSub.broadcast(Product.PubSub, "devices", {event, device})
+    {:ok, device}
   end
 
   @doc """

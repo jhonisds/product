@@ -22,7 +22,7 @@ defmodule ProductWeb.DeviceLive.DeviceComponent do
           </div>
           <div class="column column-10">
             <a href="#" phx-click="duplicate" phx-target="<%= @myself %>">
-             add
+             duplicate
             </a>
           </div>
         </div>
