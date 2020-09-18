@@ -25,6 +25,9 @@ defmodule ProductWeb.DeviceLive.DeviceComponent do
              duplicate
             </a>
           </div>
+          <div class="column column-10">
+            <%= live_patch "edit", to: Routes.device_index_path(@socket, :edit, @device.id) %>
+          </div>
         </div>
     """
   end

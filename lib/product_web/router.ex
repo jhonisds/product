@@ -19,6 +19,7 @@ defmodule ProductWeb.Router do
 
     live "/", PageLive, :index
     live "/devices", DeviceLive.Index, :index
+    live "/devices/:id/edit", DeviceLive.Index, :edit
   end
 
   # Other scopes may use custom stacks.
