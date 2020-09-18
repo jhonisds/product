@@ -12,12 +12,18 @@ defmodule ProductWeb.DeviceLive.Index do
   end
 
   defp apply_actions(socket, :index, _) do
-    # IO.inspect("index")
-    # IO.inspect(socket)
-
     socket
     |> assign(:page_title, "list device")
     |> assign(:devices, socket.assigns.devices)
+  end
+
+  defp apply_actions(socket, :edit, %{"id" => id}) do
+    socket
+    |> assign(:page_title, "Edit device")
+    |> assign(:device, Product.Devices.get_device!(id))
+
+    IO.inspect(socket)
+    socket
   end
 
   @impl true
