@@ -1,7 +1,15 @@
+<%= if @life_action in [:new, :edit] do %>
+<%= live_modal @socket, ProductWeb.DeviceLive.FormComponent,
+        id: @device.id || :new,
+        title: @page_title,
+        action: @live_action,
+        device: @device,
+        return_to: Routes.device_index_path(@socket, :index)
+     %>
+<% end %>
+
 <ul id="devices" phx-update="prepend">
     <%= for devices <- @devices  do %>
-
     <%= live_component @socket, ProductWeb.DeviceLive.DeviceComponent, id: devices.id, device: devices %>
-
     <% end %>
 </ul>
