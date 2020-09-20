@@ -1,4 +1,4 @@
-<%= if @life_action in [:new, :edit] do %>
+<%= if @live_action in [:new, :edit] do %>
 <%= live_modal @socket, ProductWeb.DeviceLive.FormComponent,
         id: @device.id || :new,
         title: @page_title,

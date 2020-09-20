@@ -22,8 +22,8 @@ defmodule ProductWeb.DeviceLive.Index do
     |> assign(:page_title, "Edit device")
     |> assign(:device, Product.Devices.get_device!(id))
 
-    IO.inspect(socket)
-    socket
+    # IO.inspect(socket)
+    # socket
   end
 
   @impl true

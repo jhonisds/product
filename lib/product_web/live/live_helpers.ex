@@ -2,7 +2,7 @@ defmodule ProductWeb.LiveHelpers do
   @moduledoc """
   Module Live Helpers
   """
-  import ProductWeb.LiveView.Helpers
+  import Phoenix.LiveView.Helpers
 
   def live_modal(socket, component, opts) do
     path = Keyword.fetch!(opts, :return_to)
