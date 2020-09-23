@@ -9,7 +9,7 @@
 <% end %>
 
 <ul id="devices" phx-update="prepend">
-    <%= for devices <- @devices  do %>
-    <%= live_component @socket, ProductWeb.DeviceLive.DeviceComponent, id: devices.id, device: devices %>
+    <%= for device <- @devices  do %>
+    <%= live_component @socket, ProductWeb.DeviceLive.DeviceComponent, id: device.id, device: device %>
     <% end %>
 </ul>

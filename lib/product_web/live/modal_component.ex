@@ -12,10 +12,11 @@ defmodule ProductWeb.ModalComponent do
         phx-window-keydown="close"
         phx-key="escape"
         phx-target="#<%= @id %>"
-        phx-page-loading>
+        phx-page-loading
+        >
 
         <div class="phx-modal-content">
-          <%= live_patch raw("&times"), to: @return_to, class: "phx-modal-close" %>
+          <%= live_patch raw("&times;"), to: @return_to, class: "phx-modal-close" %>
           <%= live_component @socket, @component, @opts %>
         </div>
 

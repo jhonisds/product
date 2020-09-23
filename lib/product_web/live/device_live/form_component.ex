@@ -20,7 +20,7 @@ defmodule ProductWeb.DeviceLive.FormComponent do
       |> Devices.change_device(device)
       |> Map.put(:action, :validate)
 
-    {:noreply, assign(socket.assigns.action, changeset)}
+    {:noreply, assign(socket, socket.assigns.action, device)}
   end
 
   @impl true
